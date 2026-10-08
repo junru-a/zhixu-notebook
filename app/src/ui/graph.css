@@ -1,0 +1,23 @@
+.graph-workspace { min-width:0; }
+.graph-workspace.graph-expanded { position:fixed; inset:16px; z-index:150; height:calc(100dvh - 32px); max-height:none; box-shadow:0 0 0 24px #26324455; grid-template-columns:minmax(0,1fr) 320px; }
+.graph-expanded .module-detail,.graph-expanded .network-inspector { max-height:none; }
+.graph-viewer { display:flex; flex-direction:column; min-width:0; height:100%; }
+.graph-controls { display:flex; align-items:center; gap:6px; flex-wrap:wrap; padding:10px 12px; border-bottom:1px solid var(--line); background:var(--surface); }
+.graph-controls .button { font-size:12px; padding:6px 9px; min-height:32px; }
+.graph-zoom-buttons { display:flex; align-items:center; }
+.graph-zoom-buttons output { font-size:12px; min-width:42px; text-align:center; color:var(--secondary); font-variant-numeric:tabular-nums; }
+.graph-controls .graph-expand-button { margin-left:auto; }
+.graph-viewport { position:relative; height:clamp(360px,58vh,620px); min-height:0; overflow:hidden; background-color:var(--bg); background-image:radial-gradient(var(--line) 1px,transparent 1px); background-size:20px 20px; touch-action:none; cursor:grab; }
+.graph-viewport:active { cursor:grabbing; }
+.graph-world { position:absolute; top:0; left:0; transform-origin:top left; }
+.graph-world > svg { position:absolute; inset:0; overflow:visible; pointer-events:none; }
+.graph-world button { cursor:pointer; }
+.graph-camera-hint { font-size:11px; color:var(--muted); padding:8px 12px; background:var(--surface); border-top:1px solid var(--line); }
+.graph-expanded .graph-viewport { flex:1; height:auto; }
+.graph-expanded .architecture-canvas,.graph-expanded .network-canvas { display:flex; flex-direction:column; min-height:0; max-height:none; }
+.graph-expanded .graph-viewer { flex:1; min-height:0; }
+@media(max-width:900px) {
+  .graph-workspace.graph-expanded { inset:6px; height:calc(100dvh - 12px); grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr) 220px; }
+  .graph-expanded .module-detail,.graph-expanded .network-inspector { padding:16px; }
+}
+@media(max-width:600px) { .graph-controls { gap:2px; padding:8px; }.graph-controls .button { font-size:11px; padding:5px 7px; }.graph-controls .graph-expand-button { margin-left:0; } }

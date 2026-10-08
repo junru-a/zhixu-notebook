@@ -1,0 +1,30 @@
+{
+  "name": "research-notebook-launcher",
+  "private": true,
+  "version": "0.3.0-oss.1",
+  "description": "科研记录本根目录启动入口",
+  "scripts": {
+    "dev": "npm --prefix app run dev --",
+    "build": "npm --prefix app run build --",
+    "test": "npm --prefix app run test --",
+    "preview": "npm --prefix app run preview --",
+    "desktop": "npm run build && npm --prefix desktop run start",
+    "desktop:pack": "npm run build && npm --prefix desktop run pack",
+    "desktop:dist": "npm run build && npm --prefix desktop run dist",
+    "desktop:test": "npm --prefix desktop test",
+    "privacy:check": "node scripts/check-public-source.mjs"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "author": "junru-a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junru-a/zhixu-notebook.git"
+  },
+  "homepage": "https://github.com/junru-a/zhixu-notebook#readme",
+  "bugs": {
+    "url": "https://github.com/junru-a/zhixu-notebook/issues"
+  }
+}

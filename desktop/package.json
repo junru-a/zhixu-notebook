@@ -1,0 +1,69 @@
+{
+  "name": "zhixu-notebook-oss",
+  "productName": "知序科研记录本（开源版）",
+  "version": "0.3.0-oss.1",
+  "description": "研究记录、科研树与知识网络的本地桌面应用",
+  "author": "junru-a",
+  "private": true,
+  "main": "build/main.cjs",
+  "scripts": {
+    "prepare:app": "node node_modules/electron/install.js && node build.mjs",
+    "start": "npm run prepare:app && electron .",
+    "pack": "npm run prepare:app && electron-builder --win --dir",
+    "dist": "npm run prepare:app && electron-builder --win nsis --x64 --publish never",
+    "test": "node --test test/*.test.cjs"
+  },
+  "devDependencies": {
+    "electron": "43.7.9",
+    "electron-builder": "26.15.3",
+    "esbuild": "0.28.2"
+  },
+  "build": {
+    "appId": "cn.zhixu.notebook.opensource",
+    "productName": "知序科研记录本（开源版）",
+    "asar": true,
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "build/**/*",
+      "assets/icon.ico",
+      "assets/icon.png",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.ico",
+      "artifactName": "Zhixu-Notebook-OpenSource-${version}-Setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "知序科研记录本（开源版）",
+      "deleteAppDataOnUninstall": false,
+      "runAfterFinish": false,
+      "uninstallDisplayName": "知序科研记录本（开源版）"
+    }
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "overrides": {
+    "@electron/get": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junru-a/zhixu-notebook.git"
+  },
+  "homepage": "https://github.com/junru-a/zhixu-notebook#readme",
+  "bugs": {
+    "url": "https://github.com/junru-a/zhixu-notebook/issues"
+  }
+}

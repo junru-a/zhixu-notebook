@@ -1,0 +1,5 @@
+.desktop-welcome { display:flex; align-items:center; gap:24px; padding:18px 22px; margin:0 0 25px; background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:6px; }
+.desktop-welcome b { font-size:14px; }.desktop-welcome p { color:var(--muted); font-size:13px; margin-top:5px; }.desktop-welcome .button { margin-left:auto; }
+.desktop-data-settings { margin-top:22px; padding-top:20px; border-top:1px solid var(--line); }.desktop-data-settings h3 { font-size:16px; }.desktop-data-path { overflow-wrap:anywhere; }
+.desktop-clear-key { display:flex; gap:8px; align-items:center; font-size:13px; margin:10px 0; }.desktop-clear-key input { accent-color:var(--accent); }
+@media(max-width:760px) { .desktop-welcome { flex-wrap:wrap; gap:12px; }.desktop-welcome .button { margin-left:0; } }
